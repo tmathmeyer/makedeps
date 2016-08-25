@@ -30,7 +30,7 @@ binary: build
 library: $(compiled_source_files)
 	@echo "$(shell pwd) library"
 	@mkdir -p build/library
-	@ld -o build/library/$(project).o -r $<
+	@ld -o build/library/$(project).o -r $^
 build/obj/%.o: src/C/%.c
 	@mkdir -p build/obj
 	@gcc $(CFLAGS) -c $< -o $@
